@@ -6,30 +6,67 @@ body{
 
     margin: 0;
     padding: 0;
+
+
+    font-size: 14px;
+    font-family: 'MS Sans Serif';
 }
 
 .container {
     border: 1px solid white;
-    border-bottom-color: #7b7b7b;
-    border-right-color: #7b7b7b;
+    border-bottom-color: #868a8e;
+    border-right-color: #868a8e;
 
     margin: 1px;
     padding: 2px;
-    background-color: #bdbdbd;
+    background-color: #c3c7cb;
 
     height: calc(100% - 8px);
     width: calc(100% - 8px);
     position: absolute;
-
-    font-size: 8px;
-    font-family: Sans-Serif;
 }
 
 header .window-bar{
     width: 100%;
     height: 18px;
 
-    background-color: #00007b;
+    background-color: #0000aa;
 
     -webkit-app-region: drag;
+}
+
+header .window-bar .icon{
+    background-image: url(./assets/icons/favicon.png);
+    height: 16px;
+    width: 16px;
+
+    margin: 1px 2px;
+    float: left;
+}
+
+header .window-bar .title{
+    color: white;
+}
+
+header .toolbar{
+    height: 16px;
+    margin: 2px 0;
+}
+
+main{
+    height: calc(100% - 26px - 72px);
+}
+
+main .toolbar{
+    width: 56px;
+    height: 100%;
+    float: left;
+}
+
+main .canvas{
+    width: calc(100% - 56px);
+    height: 100%;
+    float: right;
+
+    background-color: #868a8e;
 }
