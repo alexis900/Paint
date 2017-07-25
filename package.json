@@ -1,0 +1,26 @@
+{
+  "name": "paint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --watch * --exec \"electron .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkaqua/Paint.git"
+  },
+  "author": "darkaqua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darkaqua/Paint/issues"
+  },
+  "homepage": "https://github.com/darkaqua/Paint#readme",
+  "devDependencies": {
+    "electron": "^1.6.11"
+  },
+  "dependencies": {
+    "electron-pug": "^1.5.1",
+    "pug": "^2.0.0-rc.2"
+  }
+}
