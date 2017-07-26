@@ -1,5 +1,5 @@
 body{
-    background-color: #dedede;
+    background-color: #dfdfdf;
 
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -8,21 +8,23 @@ body{
     padding: 0;
 
 
-    font-size: 14px;
+    letter-spacing: 0.6px;
+    transform: translateZ(0);
+    font-size: 12px;
     font-family: 'MS Sans Serif';
 }
 
 .container {
     border: 1px solid white;
-    border-bottom-color: #868a8e;
-    border-right-color: #868a8e;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
 
     margin: 1px;
     padding: 2px;
-    background-color: #c3c7cb;
+    background-color: #c0c0c0;
 
-    height: calc(100% - 8px);
-    width: calc(100% - 8px);
+    height: calc(100% - 7px);
+    width: calc(100% - 7px);
     position: absolute;
 }
 
@@ -30,7 +32,8 @@ header .window-bar{
     width: 100%;
     height: 18px;
 
-    background-color: #0000aa;
+    /*background-color: #0000aa;//#1084d0*/
+    background: linear-gradient(to right, rgba(0,0,170,1) 0%, rgba(16,131,208,1) 100%);
 
     -webkit-app-region: drag;
 }
@@ -45,12 +48,38 @@ header .window-bar .icon{
 }
 
 header .window-bar .title{
+    line-height: 18px;
+    font-weight: 600;
     color: white;
 }
 
 header .toolbar{
-    height: 16px;
-    margin: 2px 0;
+    height: 18px;
+    margin: 1px 0;
+
+     user-select: none;
+     cursor: default;
+}
+
+header .toolbar .option{
+    display: table;
+    padding: 1px 3px;
+    float: left;
+
+    border: 1px solid #c0c0c0;
+}
+header .toolbar .option:hover{
+    border: 1px solid white;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+}
+
+header .toolbar .option:active{
+    padding: 2px 2px 0 4px;
+
+    border: 1px solid white;
+    border-top-color: #808080;
+    border-left-color: #808080;
 }
 
 main{
@@ -68,5 +97,12 @@ main .canvas{
     height: 100%;
     float: right;
 
-    background-color: #868a8e;
+    background-color: #808080;
+}
+
+
+
+
+.underline{
+    text-decoration: underline;
 }
