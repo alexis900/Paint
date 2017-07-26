@@ -7,9 +7,7 @@ const {BrowserWindow, app} = require('electron');
 const path = require('path');
 const url = require('url');
 
-const pug = require('electron-pug');
-
-pug({pretty: true}, {});
+const pug = require('electron-pug-less')({pretty: true}, {});
 
 let win;
 
