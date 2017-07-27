@@ -20,8 +20,8 @@
     "electron": "^1.6.11"
   },
   "dependencies": {
-    "electron-pug": "^1.5.1",
-    "electron-pug-less": "^1.0.0",
+    "electron-interceptor": "^1.0.2",
+    "less": "latest",
     "pug": "^2.0.0-rc.2"
   }
 }

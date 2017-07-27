@@ -25,20 +25,20 @@ body{
   transform: translateZ(0);
   font-size: 12px;
   font-family: 'MS Sans Serif';
-}
 
-.container {
-  border: 1px solid @c_white;
-  border-bottom-color: @c_dark_gray;
-  border-right-color: @c_dark_gray;
+  > .container {
+    border: 1px solid @c_white;
+    border-bottom-color: @c_dark_gray;
+    border-right-color: @c_dark_gray;
 
-  margin: 1px;
-  padding: 2px;
-  background-color: @c_gray;
+    margin: 1px;
+    padding: 2px;
+    background-color: @c_gray;
 
-  height: ~'calc(100% - 7px)';
-  width: ~'calc(100% - 7px)';
-  position: absolute;
+    height: ~'calc(100% - 7px)';
+    width: ~'calc(100% - 7px)';
+    position: absolute;
+  }
 }
 
 header{
@@ -179,18 +179,127 @@ header{
 main{
   height: ~'calc(100% - 26px - 72px)';
 
+  @toolbar_width: 57px;
+
   .toolbar{
-    width: 56px;
-    height: 100%;
+    width: @toolbar_width;
+    height: ~'calc(100% - 2px)';
     float: left;
+
+    border-top: 1px solid @c_dark_gray;
+    border-bottom: 1px solid @c_white;
+
+    .container{
+      width: 100%;
+      height: ~'calc(100% - 2px)';
+
+      border-top: 1px solid @c_white;
+      border-bottom: 1px solid @c_dark_gray;
+
+      overflow: hidden;
+
+      .tools{
+        height: 200px;
+        width: 50px;
+
+        margin-top: -2px;
+        margin-left: 4px;
+
+        background-color: black;
+
+        .button{
+          display: table;
+          padding: 3px;
+          margin-right: 1px;
+          margin-bottom: 1px;
+
+
+          border: 1px solid @c_white;
+          border-bottom-color: @c_dark_gray;
+          border-right-color: @c_dark_gray;
+
+          float: left;
+
+          background-color: @c_gray;
+
+          .content{
+            height: 16px;
+            width: 16px;
+          }
+
+          &.free > .content{
+            background-image: url(./assets/icons/toolbar/free.png);
+          }
+          &.sel > .content{
+            background-image: url(./assets/icons/toolbar/sel.png);
+          }
+          &.erase > .content{
+            background-image: url(./assets/icons/toolbar/erase.png);
+          }
+          &.fill > .content{
+            background-image: url(./assets/icons/toolbar/fill.png);
+          }
+          &.pick > .content{
+            background-image: url(./assets/icons/toolbar/pick.png);
+          }
+          &.magnifier > .content{
+            background-image: url(./assets/icons/toolbar/magnifier.png);
+          }
+          &.pencil > .content{
+            background-image: url(./assets/icons/toolbar/pencil.png);
+          }
+          &.brush > .content{
+            background-image: url(./assets/icons/toolbar/brush.png);
+          }
+          &.airbrush > .content{
+            background-image: url(./assets/icons/toolbar/airbrush.png);
+          }
+          &.text > .content{
+            background-image: url(./assets/icons/toolbar/text.png);
+          }
+          &.line > .content{
+            background-image: url(./assets/icons/toolbar/line.png);
+          }
+          &.curve > .content{
+            background-image: url(./assets/icons/toolbar/curve.png);
+          }
+          &.rectangle > .content{
+            background-image: url(./assets/icons/toolbar/rectangle.png);
+          }
+          &.polygon > .content{
+            background-image: url(./assets/icons/toolbar/polygon.png);
+          }
+          &.ellipse > .content{
+            background-image: url(./assets/icons/toolbar/ellipse.png);
+          }
+          &.rounded > .content{
+            background-image: url(./assets/icons/toolbar/rounded.png);
+          }
+
+        }
+      }
+    }
   }
 
-  .canvas{
-    width: ~'calc(100% - 56px)';
-    height: 100%;
+  > .content{
+    width: ~'calc(100% - ' @toolbar_width ~' - 2px)';
+    height: ~'calc(100% - 2px)';
     float: right;
 
-    background-color: @c_dark_gray;
+    border: 1px solid @c_dark_gray;
+    border-bottom-color: @c_white;
+    border-right-color: @c_white;
+
+    .container{
+      width: ~'calc(100% - 2px)';
+      height: ~'calc(100% - 2px)';
+
+      border: 1px solid @c_black;
+      border-bottom-color: @c_light_gray;
+      border-right-color: @c_light_gray;
+
+      background-color: @c_dark_gray;
+    }
   }
 }
 

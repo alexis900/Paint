@@ -7,7 +7,31 @@ const {BrowserWindow, app} = require('electron');
 const path = require('path');
 const url = require('url');
 
-const pug = require('electron-pug-less')({pretty: true}, {});
+const pug = require('pug');
+const less = require('less');
+
+require('electron-interceptor')([
+    {
+        extension: '.pug',
+        mimeType: 'text/html',
+        exec: (content, callback) => {
+            callback(pug.render(content.toString(), {}));
+        }
+    },
+    {
+        extension: '.less',
+        mimeType: 'text/css',
+        exec: (content, callback) => {
+            less.render(content.toString(), (error, compiled) => {
+                if(error){
+                    callback(error);
+                    return;
+                }
+                callback(compiled.css);
+            });
+        }
+    }
+]);
 
 let win;
 
