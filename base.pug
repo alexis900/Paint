@@ -77,6 +77,29 @@ html
                             div.button.rounded
                                 div.content
 
+                        div.tool-options
+
                 div.content
                     div.container
                         div.canvas
+
+            footer
+                div.color-bar
+                    div.current
+                        div.content
+                            div.over_option
+                                div.content
+
+                            div.below_option
+                                div.content
+
+                    div.superior
+                    - var n = 0;
+                        while n < 14
+                            div.color(class='color_' + (n++))
+                                div.content
+                    div.inferior
+                        - var n = 14;
+                            while n < 28
+                                div.color(class='color_' + (n++))
+                                    div.content

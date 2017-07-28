@@ -177,7 +177,7 @@ header{
 }
 
 main{
-  height: ~'calc(100% - 26px - 72px)';
+  height: ~'calc(100% - 26px - 72px - 12px)';
 
   @toolbar_width: 57px;
 
@@ -225,7 +225,7 @@ main{
             border-top-color: @c_black;
             border-left-color: @c_black;
 
-            background: url(assets/icons/toolbar/background.png) 1px 1px;
+            background: url(assets/icons/background.png) 1px 1px;
 
             > .content {
               border: 1px solid @c_dark_gray;
@@ -314,6 +314,19 @@ main{
 
         }
       }
+
+      .tool-options{
+
+        height: 64px;
+        width: 39px;
+
+        margin-left: 8px;
+        margin-top: 3px;
+
+        border: 1px solid @c_dark_gray;
+        border-right-color: @c_white;
+        border-bottom-color: @c_white;
+      }
     }
   }
 
@@ -337,6 +350,99 @@ main{
       background-color: @c_dark_gray;
     }
   }
+}
+
+footer{
+
+  .color-bar{
+    height: 32px;
+    width: 255px;
+
+    margin-top: 7px;
+
+    .current{
+      height: 30px;
+      width: 29px;
+
+      float: left;
+
+      > .content{
+        height: 28px;
+        width: 27px;
+
+        border: 1px solid @c_black;
+        border-bottom-color: @c_gray;
+        border-right-color: @c_gray;
+
+        background: url(assets/icons/background.png) 1px 1px;
+
+        position: relative;
+
+        .over_option{
+          top: 3px;
+          left: 2px;
+          z-index: 99;
+
+          .content{
+            background-color: @c_black;
+          }
+        }
+
+        .below_option{
+          bottom: 3px;
+          right: 3px;
+
+          .content{
+            background-color: @c_white;
+          }
+        }
+
+        .over_option, .below_option{
+          display: table;
+
+          position: absolute;
+
+          border: 1px solid @c_white;
+          border-bottom-color: @c_dark_gray;
+          border-right-color: @c_dark_gray;
+
+          .content{
+            height: 11px;
+            width: 11px;
+
+            border: 1px solid @c_gray;
+          }
+
+        }
+
+      }
+    }
+
+    .color{
+      height: 14px;
+      width: 14px;
+
+      float: left;
+
+      .content{
+        height: 12px;
+        width: 12px;
+
+        border: 1px solid @c_black;
+        border-bottom-color: @c_gray;
+        border-right-color: @c_gray;
+
+        background-color: @c_light_blue;
+      }
+    }
+
+    .current, .color{
+      border: 1px solid @c_dark_gray;
+      border-bottom-color: @c_white;
+      border-right-color: @c_white;
+    }
+  }
+
 }
 
 .underline{
