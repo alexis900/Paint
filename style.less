@@ -164,7 +164,7 @@ header{
         border-right-color: @c_dark_gray;
       }
 
-      &:active{
+      &:active, &.active{
         padding: 2px 2px 0 4px;
 
         border: 1px solid @c_white;
@@ -207,24 +207,60 @@ main{
 
         background-color: black;
 
+        cursor: default;
+
         .button{
           display: table;
-          padding: 3px;
-          margin-right: 1px;
-          margin-bottom: 1px;
-
 
           border: 1px solid @c_white;
-          border-bottom-color: @c_dark_gray;
-          border-right-color: @c_dark_gray;
+          border-bottom-color: @c_black;
+          border-right-color: @c_black;
 
           float: left;
 
           background-color: @c_gray;
 
+          &.active{
+            border: 1px solid @c_white;
+            border-top-color: @c_black;
+            border-left-color: @c_black;
+
+            background: url(assets/icons/toolbar/background.png) 1px 1px;
+
+            > .content {
+              border: 1px solid @c_dark_gray;
+              border-right-color: @c_gray;
+              border-bottom-color: @c_gray;
+
+              background-position: 4px 4px;
+            }
+          }
+
+          &:active {
+            border: 1px solid @c_white;
+            border-top-color: @c_black;
+            border-left-color: @c_black;
+
+            background: @c_gray none;
+
+            > .content {
+              border: 1px solid @c_dark_gray;
+              border-right-color: @c_gray;
+              border-bottom-color: @c_gray;
+
+              background-position: 5px 5px;
+            }
+          }
+
           .content{
-            height: 16px;
-            width: 16px;
+            height: 21px;
+            width: 21px;
+
+            border: 1px solid @c_gray;
+            border-right-color: @c_dark_gray;
+            border-bottom-color: @c_dark_gray;
+
+            background: no-repeat 3px 3px;
           }
 
           &.free > .content{
