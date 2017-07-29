@@ -443,6 +443,79 @@ footer{
     }
   }
 
+  .separator{
+    width: 100%;
+    height: 0;
+
+    margin-top: 8px;
+
+    border-top: 1px solid @c_dark_gray;
+    border-bottom: 1px solid @c_white;
+  }
+
+  .info-containers{
+    width: 100%;
+    height: 21px;
+    margin-top: 2px;
+
+    position: relative;
+    overflow: hidden;
+
+    @size_boxes: 115px;
+    @max_boxes_sum_size: (@size_boxes * 2) + (6px * 2);
+    @max_screen_sum_size: @max_boxes_sum_size + (4px * 2);
+
+    .container{
+      width: @size_boxes;
+      height: 19px;
+
+      border: 1px solid;
+      margin-right: 2px;
+
+      float: left;
+
+      border: 1px solid @c_dark_gray;
+      border-bottom-color: @c_white;
+      border-right-color: @c_white;
+
+      @size_help: 204px;
+
+      &.help{
+        width: ~'calc(100% - '@max_boxes_sum_size~')';
+        min-width: @size_help;
+      }
+
+      @media screen and (max-width: 453px) {
+        &.misc{
+          width: ~'calc(100% - '@size_boxes~' - '@size_help~' - (6px * 2))';
+        }
+
+      }
+
+      @media screen and (max-width: 338px) {
+        &.coordinates{
+          width: ~'calc(100% - '@size_help~' - 8px)';
+        }
+
+      }
+
+    }
+
+    .corner-resize{
+      height: 12px;
+      width: 12px;
+
+      border-bottom: 1px solid @c_gray;
+      border-right: 1px solid @c_gray;
+
+      position: absolute;
+      right: 2px;
+      bottom: 0;
+
+      background-image: url(./assets/icons/corner-resize.png);
+    }
+  }
+
 }
 
 .underline{
